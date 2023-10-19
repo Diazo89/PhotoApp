@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  Photo
 //
-//  Created by Jhon Diaz on 16/10/23.
+//  Created by Jhon Diaz on 15/10/23.
 //
 
 import CoreData
@@ -14,8 +14,9 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            
+           let newItem = Photo(context: viewContext)
+           
         }
         do {
             try viewContext.save()
